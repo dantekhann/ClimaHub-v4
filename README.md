@@ -1,34 +1,44 @@
-🌤️ Meu Clima Real - v3.0 
+README - Meu Clima v4: Edição Tempo Real (v2)
+Este documento detalha as atualizações e a evolução técnica do projeto Meu Clima da versão 3 para a 4, focando em experiência do usuário (UX), precisão nos dados e design minimalista.
 
-Um aplicativo de previsão do tempo de alta precisão e resiliência, desenvolvido com Vanilla JS. A versão 3.0 foi focada em Edge Cases (casos extremos).
+🚀 Visão Geral
+A versão 4 traz um refinamento visual e funcional, focando em uma interface limpa e em informações contextuais dinâmicas. O título foi atualizado para "Previsão em Tempo Real", refletindo a natureza instantânea dos dados consumidos via API.
+️
+O que mudou? (v3 vs v4)
+Funcionalidade Versão 3 Versão 4 (Atual)
+Título Previsão Realtime Previsão em Tempo Real
+Estado Temporal Estático Dinâmico (Detecção de
+☀️/🌙 via API)
 
-🚀 Funcionalidades da Versão 3.0
+Posicionamento Ícone isolado Composição Visual (Sol/Lua integrado à box)
+Tipografia Padrão Hierarquia Visual (Pesos maiores para temperatura)
 
-Busca com Normalização: Tratamento rigoroso de strings que remove múltiplos hífens e caracteres especiais, garantindo compatibilidade total com a API.
+🧠 Lógica de Implementação
 
-Resolução de Homônimos: Interface inteligente que detecta cidades com nomes iguais e gera uma lista de seleção para o usuário escolher o local exato (Estado/País).
+1. Dinâmica Sol e Lua Integrado diretamente com a API Open-Meteo, o código agora interpreta o parâmetro is_day para fornecer contexto astronômico em tempo real.
 
-Layout Anti-Quebra: CSS configurado com word-break e overflow-wrap para suportar nomes de até 85 letras sem deformar o card.
+● Lógica de Estado: O sistema identifica se na localidade pesquisada é dia ou noite, exibindo o emoji correspondente (☀️ para dia, 🌙 para noite).
 
-Nuvem Inteligente: Ícone climático com posicionamento relativo e animação de flutuação, corrigido para nunca vazar do container.
+● Composição Interna: O emoji de estado foi inserido diretamente dentro do card (box), posicionado logo abaixo do ícone principal da nuvem/condição, criando uma leitura unificada da situação climática.
 
-🛠️ Tecnologias UtilizadasHTML5 & CSS3: Design com Glassmorphism, Variáveis CSS e Flexbox.JavaScript (ES6+): Uso intensivo de Async/Await, RegEx para limpeza de dados e manipulação dinâmica de Data-Attributes.Open-Meteo API: Geocoding e Weather API integradas com lógica de fuso horário.
+● Ícones Adaptativos: Mesmo em condições de céu limpo, o sistema substitui
+automaticamente os ícones de sol por lua durante o período noturno local.
+2. Design Minimalista e Legibilidade.
 
-📂 Estrutura do ProjetoPlaintextweather-app/
+● Fundo Neutro: A interface utiliza tons de cinza azulado e brancos (#f0f2f5),
+eliminando distrações visuais e garantindo que os dados de temperatura sejam o ponto focal.
 
-├── index.html          # Estrutura principal e container de alertas
+● Contraste Inteligente: As cores dos textos e títulos são ajustadas para garantir leitura, independentemente da luminosidade do ambiente.
 
-├── style.css           # Estilização global e animações
+● Estética Glassmorphism: O card principal utiliza efeitos de desfoque e transparência para um aspecto moderno e leve.
 
-└── script.js           # Lógica de normalização, busca, fallback e renderização
+📂 Estrutura de Arquivos
+● index.html: Estrutura semântica atualizada com o novo título.
+● style.css: Estilização neutra com foco em variáveis para manutenção simplificada.
+● script.js: Lógica de consumo da API Open-Meteo com a nova integração de estado
+temporal.
 
-🔧 Como Rodar o Projeto
-Clone este repositório:
-git clone [https://github.com/SEU-USUARIO/meu-clima-v2.git](https://github.com/SEU-USUARIO/meu-clima-v3.git)
+🔧 Como Rodar o Projeto Clone este repositório: git clone https://github.com/SEU-USUARIO/meu-clima-v4.git
 
-👤 Autor
-Paulo Dante Coelho Neto
-
-Economista e Analista Financeiro explorando o mundo do desenvolvimento.
-
-[GitHub](https://github.com/dantekhann)
+👤 Desenvolvido por: Paulo Dante Coelho Neto
+https://github.com/dantekhann
